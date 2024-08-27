@@ -1,0 +1,129 @@
+github url: https://github.com/Praveensdet1/Cucumber_RahulShetty.git
+
+mail: praveenreddy31121998@gmail.com
+password: Praveen7013@
+username:Praveensdet1
+secret text : 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
+
+error while pushing we can resolve by using this 2 commands: git config user.name "new name"
+git config credential.username "new name"   
+
+git init
+git status
+git add *
+git commit -m "commit message"
+git remote add origin githubrepourl
+git push origin master
+git pull origin master
+
+checking out the particular version:
+
+git log - to see all the versions which we have created so far
+
+git log --oneline [ we can see in short lines with versions]
+
+git show verionid:filename.txt
+
+git checkout versionid filename.txt [ check out to previous versions]
+
+git clone url [clone existing repo]
+git branch [to view available branches] * represents default/active branch
+git branch branchname [to create new branch]
+git checkout Praveen        [switch from one branch to another]
+git checkout -b branchname                        [create new branch and automatically switch particularly to that branch in single command]
+
+
+
+
+jenkins:
+java -jar jenkins.war --httpPort=9090
+localhost::9090
+username : praveenreddy
+password: praveenreddy
+email: praveenreddy31121998@gmail.com
+
+****how we integrate java project with jenkins and run using bat file:
+
+create lib folder in project location/path
+need to put all required jar files for this project  in this floder[selenium-java ,testNG, chromedriver etc..]
+create one text file[ru.bat] and inside we need to provide 4-5 lines of batch commands
+now we can just run this batch file to run our project 
+-now run this batch file with the help of jenkins by integration
+[jenkins-manage jenkins-global tool configuration-add the JDK[we have to provide JAVA_HOME] and we need to provide path from environment variables JAVA_HOME]
+same git also we need to set and same maven path also we need to set and save it...
+create new job: click on new item(sample project-freestyle project-ok)
+go to project-configure-give description-check use custom workspace from advanced- and put the project path..build-select execute windows batch command option[we need to provide batch
+commands 4-5 lines whatever we have in batch file] and apply and save
+project is ready and click on build now...we can see output in console window
+
+****how to integrate maven project with jenkins
+
+we need to install few more plugins
+green balls-whenever our build gets success/failure -it will show with green colour
+email extensions- to send emails
+html publisher - to publish extent reports
+maven integration -to integrate maven
+testng Results -to generate testng plugins
+
+-> build-give the path of pom.xml
+goals and optiond -specify clean install
+apply and save it and build now
+
+
+****how to integrate maven github project with jenkins and how we can set parameters in jenkins ans how we can pass parameters
+
+source code management-select git and provide path and credntials
+build- repositoryname/pom.xml
+goals and options- clean install[here we can pass parameters but hardcoded also to our testcase][we have to specify like ..clean install -DxmlFiles=$XML -Dbrowser=$browser -Durl=$URL]after 
+specifying all parameters from first secton in configure tab
+click on apply and save and build now..now we can see build with parameters option
+
+->if we want to pass parameters..from first section in configure tab ..select this is parametorized and provide string parameter and choice parametrers whicever we want..
+
+
+*******extent reports integration
+post build actions-publish Testng results
+post build actions-publish HTML reports-go to advanced-add-we have to give path of extent report folder in project- then file name we have to give next-apply save
+set th email configuration :
+manage jenkins-configure system- 
+system admin email - we need to give our name
+extended email notification-smtp server-smtp.gmail.com
+default user email suffix-@gmail.com
+click on use smtp authentication-username" admin user email id-lpasswoord
+click on use ssl
+smtp port-465 9for gmail)
+default content- body of the email(like please find the report thanks praveen)
+under email notification-smtp server-smtp.gmail.com
+default user email suffix-@gmail.com
+click on use smtp authentication-username" admin user email id-lpasswoord
+click on use ssl
+smtp port-465 9for gmail)
+Test configuration by sendingtest email- put another gmail account
+apply and save it  [we have configured at system level]
+....we have to configure at job level as well
+click on project-configure-at last add post build action-editable email notification-project receipant list- we have to provide team emails
+clik on advanced settings-add trigger-always-advanced- put receipant list again- attachment-path of extent report file starts from project name..attach build log-select attach build log
+
+..after execution if we want to see extent report in good format in jenkins,, we have to start running jenkins with this command
+java -Dhudson.model.DirectoryBrowserSupport.CSP"" -jar "war file patth" --httpPort=9090
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
