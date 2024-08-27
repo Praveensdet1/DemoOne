@@ -14,7 +14,7 @@ public class JotForm {
 	@Test
 	public void testJotFormApp() throws InterruptedException {
 		
-		WebDriver driver = new ChromeDriver();
+		WebDriver driver = new ChromeDriver();//initialize chrome driver
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 		driver.manage().window().maximize();
 		driver.get("https://www.jotform.com/");
