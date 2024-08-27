@@ -16,7 +16,7 @@ public class JotForm {
 		
 		WebDriver driver = new ChromeDriver();//initialize chrome driver
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-		driver.manage().window().maximize();
+		driver.manage().window().maximize();//maximize the browser window
 		driver.get("https://www.jotform.com/");
 		driver.findElement(By.xpath("//*[.='Login']")).click();
 		driver.findElement(By.id("username")).sendKeys("praveenreddy2531@gmail.com");
